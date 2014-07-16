@@ -70,69 +70,7 @@ krutika
        </div>
    </div>
 </div>
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span3">
-            <div class="well sidebar-nav">
-                    <ul class="nav nav-list">
-                <li class="nav-header">Find a Category</li>
-                <form>
-                <label></label>
-                <li><input  class="search-query span10" type="text" name="suggestion" value="" id="suggestion" /></li>
-                </form>
-        </ul>
-{% if cat_list %}
-        <div id="cats">
-                {% include 'rango/category_list.html' with cat_list=cat_list %}
-        </div>
-{% endif %}    
-            </div>
-            <!--/.well -->
-        </div>
-        <!--/span-->
-        <!--/span-->
-    </div>
-    <!--/row-->
-</div>
-<!--/.fluid-container-->
 
-<div class="well sidebar-nav">
-   {% block sidebar %}
-   {% endblock %}
-   <div id="cats">
-       {% if cat_list %}
-           <ul class="nav nav-list"><li>Category List</li></ul>
-           {% include 'rango/category_list.html' with cat_list=cat_list %}
-       {% endif %}
-    </div>
-</div>
-
-{% if user.is_authenticated %}
-    <li><a href="/rango/profile">Profile</a></li>
-{% endif %}
-
-<script src="{% static "/js/jquery.js" %}"></script>
-<script src="{% static "/js/rango-ajax.js" %}"></script>
-
-<div>
-    <p>
-
-<b id="like_count">{{ category.likes }}</b> people like this category
-
-{% if user.is_authenticated %}
-        <button id ="likes" data-catid="{{category.id}}" class="btn btn-mini btn-primary" type="button">Like</button>
-{% endif %}
-
-</p>
-</div>
-        <div class="span9">
-            
-            <footer>
-                    <div class="container">
-                        <center>&copy; Rango: How to Tango with Django 2014</center>
-                    </div>
-                </footer>
-        </div>
 
 <hr>
 
